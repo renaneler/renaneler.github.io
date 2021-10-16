@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-16T18:55:53-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Renan Eler</title><subtitle>“ⓣⓗⓘⓝⓚ ⓞⓤⓣⓢⓘⓓⓔ ⓣⓗⓔ ⓑⓞⓧ”</subtitle><entry><title type="html">Módulo Simple HTTP Server</title><link href="http://localhost:4000/python/2014/12/12/simple-http-server.html" rel="alternate" type="text/html" title="Módulo Simple HTTP Server" /><published>2014-12-12T14:04:12-02:00</published><updated>2014-12-12T14:04:12-02:00</updated><id>http://localhost:4000/python/2014/12/12/simple-http-server</id><content type="html" xml:base="http://localhost:4000/python/2014/12/12/simple-http-server.html">&lt;p&gt;Nesse primeiro post, vou mostrar de maneira rápida como gerar um simples Web server utilizando o módulo &lt;code&gt;SimpleHTTPServer&lt;/code&gt; que vem embutido na linguagem python.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Com esse simples Web server é possivel compartilhar qualquer diretório do sistema em uma rede local “LAN’ com uma unica linha de comando, sem a necessidade de instalar e configurar nada.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;As distribuições GNU/Linux mais populares já vêm com Python instalado por padrão.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;iniciando-o-web-server-no-diretório-share&quot;&gt;Iniciando o Web server no diretório share.&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;share
+python &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; SimpleHTTPServer 
+Serving HTTP on 0.0.0.0 port 8000 ...
+192.168.0.14 - - &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14/Dec/2014 22:05:11] &lt;span class=&quot;s2&quot;&gt;&quot;GET / HTTP/1.1&quot;&lt;/span&gt; 200 -
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;No browser de internet de sua preferência digite:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;http://seu-ip-address:8000&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i63.fastpic.ru/big/2014/1215/62/a7d65d535559d3f4787c1c1787234c62.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Acessar via interface loopback:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;http://localhost:8000&lt;/code&gt; ou &lt;code&gt;http://127.0.0.1:8000&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Caso queira mudar a porta padrão, adicione o numero da porta no final do comando:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; SimpleHTTPServer 8080
+Serving HTTP on 0.0.0.0 port 8080 ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;suporte-para-upload-de-arquivos&quot;&gt;Suporte para Upload de Arquivos:&lt;/h4&gt;
+
+&lt;p&gt;Este simples Web server não tem suporte para upload de arquivos, porém na internet encontrei um script em python que tem a função de upload.&lt;/p&gt;
+
+&lt;p&gt;Baixe o script e salve no diretório a ser compartilhado, no meu caso share/, depois execute o script:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://bones7456.googlecode.com/svn/trunk/SimpleHTTPServerWithUpload.py&quot; title=&quot;Download&quot;&gt;SimpleHTTPServerWithUpload&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;share
+wget http://bones7456.googlecode.com/svn/trunk/SimpleHTTPServerWithUpload.py
+python SimpleHTTPServerWithUpload.py 
+Serving HTTP on 0.0.0.0 port 8000 ...
+192.168.0.14 - - &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14/Dec/2014 22:15:09] &lt;span class=&quot;s2&quot;&gt;&quot;GET / HTTP/1.1&quot;&lt;/span&gt; 200 -
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Acesse novamente o navegador de internet com &lt;code&gt;http://seu-ip-address:8000&lt;/code&gt;:&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo-1&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i63.fastpic.ru/big/2014/1215/f4/19797345ef3cd5d714c7100ba9a4a2f4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Referências:&lt;/strong&gt;&lt;br /&gt;
+http://ubuntuguide.net/http-server-support-uploading-files-from-windows-in-ubuntu&lt;/p&gt;</content><author><name>Renan E.</name></author><category term="python" /><summary type="html">Nesse primeiro post, vou mostrar de maneira rápida como gerar um simples Web server utilizando o módulo SimpleHTTPServer que vem embutido na linguagem python.</summary></entry></feed>
