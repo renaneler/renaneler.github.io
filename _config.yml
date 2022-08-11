@@ -21,7 +21,10 @@
 title: Renan Eler
 email: renaneler@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  “ⓣⓗⓘⓝⓚ ⓞⓤⓣⓢⓘⓓⓔ ⓣⓗⓔ ⓑⓞⓧ”
+"Não pense por muito tempo; faça. Mas não faça por muito tempo; pense"
+Confúcio"Não pense por muito tempo; faça. Mas não faça por muito tempo; pense"
+Confúcio
+#  “ⓣⓗⓘⓝⓚ ⓞⓤⓣⓢⓘⓓⓔ ⓣⓗⓔ ⓑⓞⓧ”
 baseurl:  # the subpath of your site, e.g. /blog
 url: "https://renanler.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: renaneler
